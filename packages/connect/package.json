@@ -1,5 +1,5 @@
 {
-  "name": "@aragon/connect",
+  "name": "@rperez89/connect",
   "version": "0.8.0-alpha.6",
   "license": "LGPL-3.0-or-later",
   "main": "dist/cjs/index.js",
@@ -34,9 +34,9 @@
     "typescript": "^3.8.3"
   },
   "dependencies": {
-    "@aragon/connect-core": "^0.8.0-alpha.6",
-    "@aragon/connect-ethereum": "^0.8.0-alpha.6",
-    "@aragon/connect-thegraph": "^0.8.0-alpha.6"
+    "@rperez89/connect-core": "^0.8.0-alpha.6",
+    "@rperez89/connect-ethereum": "^0.8.0-alpha.6",
+    "@rperez89/connect-thegraph": "^0.8.0-alpha.6"
   },
   "description": "Access and interact with Aragon Organizations and their apps.",
   "keywords": [

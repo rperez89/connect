@@ -1,5 +1,5 @@
 {
-  "name": "@aragon/subgraph-agreement",
+  "name": "@rperez89/subgraph-agreement",
   "version": "0.1.0",
   "scripts": {
     "codegen": "rm -rf generated; graph codegen",

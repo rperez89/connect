@@ -18,9 +18,9 @@ fi
 echo 'Cleaning build artifacts…'
 oao run-script --ignore-src "$glob_packages" clean --parallel
 
-# Start by installing all the nested dependencies.
-echo 'Installing dependencies…'
-oao all --ignore-src "$glob_packages" 'yarn install' --parallel
+# # Start by installing all the nested dependencies.
+# echo 'Installing dependencies…'
+# oao all --ignore-src "$glob_packages" 'yarn install' --parallel
 
 # Building the types first.
 # Note that oao is not strictly needed here as we want to execute the command

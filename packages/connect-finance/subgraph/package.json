@@ -1,5 +1,5 @@
 {
-  "name": "@aragon/subgraph-finance",
+  "name": "@rperez89/subgraph-finance",
   "version": "0.0.1",
   "scripts": {
     "codegen": "rm -rf generated; graph codegen",

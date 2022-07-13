@@ -1,5 +1,5 @@
 {
-  "name": "@aragon/subgraph-disputable-voting",
+  "name": "@rperez89/subgraph-disputable-voting",
   "version": "0.1.0",
   "scripts": {
     "codegen": "rm -rf generated; graph codegen",
@@ -13,7 +13,7 @@
     "deploy-mainnet-staging": "env STAGING=true scripts/deploy.sh aragon dvoting mainnet",
     "deploy-rinkeby": "scripts/deploy.sh aragon dvoting rinkeby",
     "deploy-rinkeby-staging": "env STAGING=true scripts/deploy.sh aragon dvoting rinkeby",
-    "deploy-xdai": "scripts/deploy.sh aragon dvoting xdai"
+    "deploy-xdai": "scripts/deploy.sh rperez89 dvoting xdai"
   },
   "devDependencies": {
     "@graphprotocol/graph-cli": "^0.19.0",

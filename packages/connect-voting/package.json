@@ -1,5 +1,5 @@
 {
-  "name": "@aragon/connect-voting",
+  "name": "@rperez89/connect-voting",
   "version": "0.8.0-alpha.10",
   "license": "LGPL-3.0-or-later",
   "main": "dist/cjs/index.js",
@@ -34,8 +34,8 @@
     "typescript": "^3.8.3"
   },
   "dependencies": {
-    "@aragon/connect-core": "^0.8.0-alpha.6",
-    "@aragon/connect-thegraph": "^0.8.0-alpha.6",
+    "@rperez89/connect-core": "^0.8.0-alpha.6",
+    "@rperez89/connect-thegraph": "^0.8.0-alpha.6",
     "graphql-tag": "^2.10.3"
   },
   "description": "Access and interact with Aragon Organizations and their apps.",

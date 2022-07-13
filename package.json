@@ -1,6 +1,6 @@
 {
-  "name": "@aragon/connect",
-  "version": "0.8.0-alpha.6",
+  "name": "@rperez89/connect",
+  "version": "0.8.0-alpha.8",
   "description": "Access and interact with Aragon Organizations and their apps.",
   "keywords": [
     "ethereum",
@@ -36,6 +36,7 @@
     "connect-thegraph": "yarn workspace @aragon/connect-thegraph",
     "connect-finance": "yarn workspace @aragon/connect-finance",
     "connect-voting": "yarn workspace @aragon/connect-voting",
+    "connect-disputable-voting": "yarn workspace @aragon/connect-disputable-voting",
     "connect-tokens": "yarn workspace @aragon/connect-tokens",
     "connect-types": "yarn workspace @aragon/connect-types",
     "test": "is-ci \"test:coverage\" \"jest\"",

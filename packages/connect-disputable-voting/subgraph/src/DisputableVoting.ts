@@ -1,4 +1,4 @@
-import { BigInt, Address } from '@graphprotocol/graph-ts'
+import { BigInt, Address, log } from '@graphprotocol/graph-ts'
 import { ERC20 as ERC20Contract } from '../generated/templates/DisputableVoting/ERC20'
 import { Agreement as AgreementContract } from '../generated/templates/Agreement/Agreement'
 import {
@@ -156,10 +156,16 @@ export function loadOrCreateVoting(votingAddress: Address): DisputableVotingEnti
   let voting = DisputableVotingEntity.load(votingAddress.toHexString())
   if (voting === null) {
     const votingApp = VotingContract.bind(votingAddress)
+
     voting = new DisputableVotingEntity(votingAddress.toHexString())
     voting.dao = votingApp.kernel()
     voting.agreement = votingApp.getAgreement()
-    voting.token = buildERC20(votingApp.token())
+    const token = votingApp.try_token()
+    if(token.reverted){
+      voting.token = buildERC20(Address.fromString('0x4f4f9b8d5b4d0dc10506e5551b0513b61fd59e75'))
+    } else {
+    voting.token = buildERC20(token.value)
+    }
   }
   return voting!
 }
@@ -187,16 +193,20 @@ function loadOrCreateVoter(votingAddress: Address, voterAddress: Address): Voter
 
 export function updateVoteState(votingAddress: Address, voteId: BigInt): void {
   const votingApp = VotingContract.bind(votingAddress)
-  const voteData = votingApp.getVote(voteId)
+  const voteData = votingApp.try_getVote(voteId)
 
+  if(voteData.reverted){
+    return
+  }
   const vote = VoteEntity.load(buildVoteId(votingAddress, voteId))!
-  vote.yeas = voteData.value0
-  vote.nays = voteData.value1
-  vote.status = vote.status == 'Settled' ? 'Settled' : castVoteStatus(voteData.value5)
-  vote.pausedAt = voteData.value8
-  vote.pauseDuration = voteData.value9
-  vote.quietEndingExtensionDuration = voteData.value10
-  vote.quietEndingSnapshotSupport = castVoterState(voteData.value11)
+  
+  vote.yeas = voteData.value.value0
+  vote.nays = voteData.value.value1
+  vote.status = vote.status == 'Settled' ? 'Settled' : castVoteStatus(voteData.value.value5)
+  vote.pausedAt = voteData.value.value8
+  vote.pauseDuration = voteData.value.value9
+  vote.quietEndingExtensionDuration = voteData.value.value10
+  vote.quietEndingSnapshotSupport = castVoterState(voteData.value.value11)
   vote.isAccepted = isAccepted(vote.yeas, vote.nays, vote.totalPower, vote.setting, votingApp.PCT_BASE())
   vote.save()
 }
@@ -208,9 +218,15 @@ export function buildERC20(address: Address): string {
   if (token === null) {
     const tokenContract = ERC20Contract.bind(address)
     token = new ERC20Entity(id)
-    token.name = tokenContract.name()
-    token.symbol = tokenContract.symbol()
-    token.decimals = tokenContract.decimals()
+    const tokenName = tokenContract.try_name()
+    const tokenSymbol = tokenContract.try_symbol()
+    const tokenDecimals = tokenContract.try_decimals()
+    if (tokenName.reverted || tokenSymbol.reverted || tokenDecimals.reverted) {
+      return null
+    }
+    token.name = tokenName.value
+    token.symbol = tokenSymbol.value
+    token.decimals = tokenDecimals.value
     token.save()
   }
 

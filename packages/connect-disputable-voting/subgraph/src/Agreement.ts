@@ -1,4 +1,4 @@
-import { BigInt, Address } from '@graphprotocol/graph-ts'
+import { BigInt, Address, log } from '@graphprotocol/graph-ts'
 import { buildVoteId, buildERC20, updateVoteState, loadOrCreateVoting } from './DisputableVoting'
 import {
   Vote as VoteEntity,
@@ -38,20 +38,20 @@ export function handleCollateralRequirementChanged(event: CollateralRequirementC
 export function handleActionDisputed(event: ActionDisputedEvent): void {
   const agreementApp = AgreementContract.bind(event.address)
   const actionData = agreementApp.getAction(event.params.actionId)
-  const challengeData = agreementApp.getChallenge(event.params.challengeId)
+  // const challengeData = agreementApp.getChallenge(event.params.challengeId)
   const voteId = buildVoteId(actionData.value0, actionData.value1)
 
-  const vote = VoteEntity.load(voteId)!
-  vote.status = 'Disputed'
-  vote.disputeId = challengeData.value8
-  vote.disputedAt = event.block.timestamp
+  // const vote = VoteEntity.load(voteId)!
+  // vote.status = 'Disputed'
+  // vote.disputeId = challengeData.value8
+  // vote.disputedAt = event.block.timestamp
 
   const submitterArbitratorFeeId = voteId + '-submitter'
   const challengeArbitratorFeesData = agreementApp.getChallengeArbitratorFees(event.params.challengeId)
   createArbitratorFee(voteId, submitterArbitratorFeeId, challengeArbitratorFeesData.value0, challengeArbitratorFeesData.value1)
 
-  vote.submitterArbitratorFee = submitterArbitratorFeeId
-  vote.save()
+  // vote.submitterArbitratorFee = submitterArbitratorFeeId
+  // vote.save()
 }
 
 export function handleActionSettled(event: ActionSettledEvent): void {
@@ -72,19 +72,20 @@ export function handleActionClosed(event: ActionClosedEvent): void {
 }
 
 export function handleActionChallenged(event: ActionChallengedEvent): void {
+  log.info('********** HANDLEE ACTION CHALLENGED ************ ', [])
   const agreementApp = AgreementContract.bind(event.address)
   const actionData = agreementApp.getAction(event.params.actionId)
-  const challengeData = agreementApp.getChallenge(event.params.challengeId)
+  // const challengeData = agreementApp.getChallenge(event.params.challengeId)
   const voteId = buildVoteId(actionData.value0, actionData.value1)
 
   const challengerArbitratorFeeId = voteId + '-challenger'
   const challengeArbitratorFeesData = agreementApp.getChallengeArbitratorFees(event.params.challengeId)
   createArbitratorFee(voteId, challengerArbitratorFeeId, challengeArbitratorFeesData.value2, challengeArbitratorFeesData.value3)
 
-  const vote = VoteEntity.load(voteId)!
-  vote.challengerArbitratorFee = challengerArbitratorFeeId
-  vote.settlementOffer = challengeData.value4
-  vote.save()
+  // const vote = VoteEntity.load(voteId)!
+  // vote.challengerArbitratorFee = challengerArbitratorFeeId
+  // vote.settlementOffer = challengeData.value4
+  // vote.save()
 }
 
 function createArbitratorFee(voteId: string, id: string, feeToken: Address, feeAmount: BigInt): void {

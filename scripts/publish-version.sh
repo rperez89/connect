@@ -29,9 +29,9 @@ EOF
 echo "Building packages…"
 yarn build
 
-# Run the tests
-echo "Testing…"
-yarn test
+# # Run the tests
+# echo "Testing…"
+# yarn test
 
 # Copy the README files in each package directory.
 confirm "Generate the README files?"

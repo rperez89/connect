@@ -59,6 +59,11 @@ export default class Vote {
   readonly collateralTokenDecimals: string
   readonly submitterArbitratorFeeId: string
   readonly challengerArbitratorFeeId: string
+  readonly minimumAcceptanceQuorumPct: string
+  readonly delegatedVotingPeriod: string
+  readonly supportRequiredPct: string
+  readonly quietEndingPeriod: string
+  readonly executionDelay: string
 
   constructor(data: VoteData, connector: IDisputableVotingConnector, ethersProvider: ethersProviders.Provider) {
     this.#ethersProvider = ethersProvider
@@ -103,6 +108,11 @@ export default class Vote {
     this.collateralTokenDecimals = data.collateralTokenDecimals
     this.submitterArbitratorFeeId = data.submitterArbitratorFeeId
     this.challengerArbitratorFeeId = data.challengerArbitratorFeeId
+    this.minimumAcceptanceQuorumPct = data.minimumAcceptanceQuorumPct
+    this.delegatedVotingPeriod = data.delegatedVotingPeriod
+    this.supportRequiredPct = data.supportRequiredPct
+    this.quietEndingPeriod = data.quietEndingPeriod
+    this.executionDelay = data.executionDelay
   }
 
   get hasEnded(): boolean {

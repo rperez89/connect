@@ -20,6 +20,8 @@ export default createAppConnector<DisputableVoting, Config>(
     const subgraphUrl =
       config.subgraphUrl ?? subgraphUrlFromChainId(network.chainId) ?? undefined
 
+      console.log('CHAIN ID!!!! ', subgraphUrl)
+
     let pollInterval
     if (orgConnector.name === 'thegraph') {
       pollInterval =

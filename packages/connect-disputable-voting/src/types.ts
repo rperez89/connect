@@ -60,6 +60,11 @@ export interface VoteData {
   collateralTokenDecimals: string
   submitterArbitratorFeeId: string
   challengerArbitratorFeeId: string
+  minimumAcceptanceQuorumPct: string
+  delegatedVotingPeriod: string
+  supportRequiredPct: string
+  quietEndingPeriod: string
+  executionDelay: string
 }
 
 export interface CastVoteData {

@@ -44,8 +44,6 @@ function buildVote(vote: any, connector: any, provider: any): Vote {
     voteId,
     creator,
     originalCreator,
-    duration: setting.voteTime,
-    quietEndingExtension: setting.quietEndingExtension,
     context,
     status,
     actionId,
@@ -53,7 +51,6 @@ function buildVote(vote: any, connector: any, provider: any): Vote {
     challenger,
     challengeEndDate,
     disputeId,
-    settingId: setting.id,
     startDate,
     totalPower,
     snapshotBlock,
@@ -77,7 +74,15 @@ function buildVote(vote: any, connector: any, provider: any): Vote {
     collateralTokenSymbol: collateralRequirement.token.symbol,
     collateralTokenDecimals: collateralRequirement.token.decimals,
     submitterArbitratorFeeId: submitterArbitratorFee ? submitterArbitratorFee.id : null,
-    challengerArbitratorFeeId: challengerArbitratorFee ? challengerArbitratorFee.id : null
+    challengerArbitratorFeeId: challengerArbitratorFee ? challengerArbitratorFee.id : null,
+    settingId: setting.id,
+    duration: setting.voteTime,
+    minimumAcceptanceQuorumPct: setting.minimumAcceptanceQuorumPct,
+    supportRequiredPct: setting.supportRequiredPct,
+    delegatedVotingPeriod: setting.delegatedVotingPeriod,
+    quietEndingExtension: setting.quietEndingExtension,
+    quietEndingPeriod: setting.quietEndingPeriod,
+    executionDelay: setting.executionDelay
   }
 
   return new Vote(voteData, connector, provider)

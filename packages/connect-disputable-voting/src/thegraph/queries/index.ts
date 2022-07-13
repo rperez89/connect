@@ -130,7 +130,12 @@ export const GET_VOTE = (type: string) => gql`
       setting { 
         id 
         voteTime
+        supportRequiredPct
+        minimumAcceptanceQuorumPct
+        delegatedVotingPeriod
+        quietEndingPeriod
         quietEndingExtension
+        executionDelay
       }
       startDate
       totalPower
@@ -192,7 +197,12 @@ export const ALL_VOTES = (type: string) => gql`
       setting { 
         id 
         voteTime
+        supportRequiredPct
+        minimumAcceptanceQuorumPct
+        delegatedVotingPeriod
+        quietEndingPeriod
         quietEndingExtension
+        executionDelay
       }
       startDate
       totalPower
