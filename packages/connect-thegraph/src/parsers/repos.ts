@@ -4,7 +4,7 @@ import {
   Organization,
   Repo,
   RepoData,
-} from '@aragon/connect-core'
+} from '@rperez89/connect-core'
 import { QueryResult } from '../types'
 
 export async function parseRepo(

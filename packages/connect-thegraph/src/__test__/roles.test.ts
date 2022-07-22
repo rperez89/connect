@@ -1,5 +1,5 @@
 import { connect } from '@aragon/connect'
-import { Organization, Role } from '@aragon/connect-core'
+import { Organization, Role } from '@rperez89/connect-core'
 import { isAddress, isBytes32 } from '../../../test-helpers'
 
 const ORG_LOCATION = 'piedao.aragonid.eth'

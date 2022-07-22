@@ -1,5 +1,5 @@
 import { connect } from '@aragon/connect'
-import { Organization, Repo } from '@aragon/connect-core'
+import { Organization, Repo } from '@rperez89/connect-core'
 import ConnectorTheGraph from '../connector'
 import { isAddress } from '../../../test-helpers'
 

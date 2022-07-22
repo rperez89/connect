@@ -6,11 +6,11 @@ import {
 } from '@urql/core'
 import { DocumentNode } from 'graphql'
 import { pipe, subscribe } from 'wonka'
-import { ErrorConnection, ErrorUnexpectedResult } from '@aragon/connect-core'
+import { ErrorConnection, ErrorUnexpectedResult } from '@rperez89/connect-core'
 import {
   SubscriptionCallback,
   SubscriptionHandler,
-} from '@aragon/connect-types'
+} from '@rperez89/connect-types'
 import { ParseFunction, QueryResult } from '../types'
 
 // Average block time is about 13 seconds on the 2020-08-14

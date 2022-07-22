@@ -1,4 +1,4 @@
-import { ConnectorInterface, Permission, App, Repo, Role } from '@aragon/connect-core';
+import { ConnectorInterface, Permission, App, Repo, Role } from '@rperez89/connect-core';
 import GraphQLWrapper from './core/GraphQLWrapper';
 export declare type ConnectorTheGraphConfig = {
     daoSubgraphUrl?: string;
