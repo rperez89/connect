@@ -1,6 +1,6 @@
-import { subscription } from '@aragon/connect-core'
+import { subscription } from '@rperez89/connect-core'
 import { BigNumber, providers as ethersProviders } from 'ethers'
-import { Address, SubscriptionCallback, SubscriptionResult } from '@aragon/connect-types'
+import { Address, SubscriptionCallback, SubscriptionResult } from '@rperez89/connect-types'
 
 import ERC20 from './ERC20'
 import Setting from './Setting'

@@ -1,5 +1,5 @@
-import { subscription } from '@aragon/connect-core'
-import { SubscriptionCallback, SubscriptionResult } from '@aragon/connect-types'
+import { subscription } from '@rperez89/connect-core'
+import { SubscriptionCallback, SubscriptionResult } from '@rperez89/connect-types'
 
 import Version from './Version'
 import CollateralRequirement from './CollateralRequirement'

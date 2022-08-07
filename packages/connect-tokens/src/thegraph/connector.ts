@@ -2,9 +2,9 @@ import {
   Address,
   SubscriptionCallback,
   SubscriptionHandler,
-} from '@aragon/connect-types'
-import { ErrorException } from '@aragon/connect-core'
-import { GraphQLWrapper } from '@aragon/connect-thegraph'
+} from '@rperez89/connect-types'
+import { ErrorException } from '@rperez89/connect-core'
+import { GraphQLWrapper } from '@rperez89/connect-thegraph'
 import { ITokensConnector } from '../types'
 import * as queries from './queries'
 import Token from '../models/Token'

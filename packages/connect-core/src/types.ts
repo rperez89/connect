@@ -3,7 +3,7 @@ import {
   providers as ethersProviders,
   utils as ethersUtils,
 } from 'ethers'
-import { Address, Network } from '@aragon/connect-types'
+import { Address, Network } from '@rperez89/connect-types'
 
 import IOrganizationConnector from './connections/IOrganizationConnector'
 import App from './entities/App'
@@ -143,11 +143,6 @@ export interface AppMethod {
    * null if there in no notice
    */
   notice: string | null
-  /**
-   * The function's ABI element is included for convenience of the client
-   * null if ABI is not found for this signature
-   */
-  abi: ethersUtils.FunctionFragment | null
 }
 
 // The aragon manifest requires the use of camelcase for some names

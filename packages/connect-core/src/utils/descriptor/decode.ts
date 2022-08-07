@@ -16,6 +16,7 @@ export function decodeForwardingPath(script: string): StepDecoded[] {
   }
 
   const path = decodeCallScript(script)
+  console.log('PATH!!!! ', path)
 
   const decodedPath = path.map((step) => {
     const { data } = step
@@ -34,6 +35,8 @@ export function decodeForwardingPath(script: string): StepDecoded[] {
       children,
     }
   })
+
+  console.log('decoded Path ', decodedPath )
 
   return decodedPath
 }

@@ -1,4 +1,4 @@
-import { miniMeAbi } from '@aragon/connect-core'
+import { miniMeAbi } from '@rperez89/connect-core'
 import { BigNumber, Contract, providers as ethersProviders } from 'ethers'
 
 import { ERC20Data } from '../types'

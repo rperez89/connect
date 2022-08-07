@@ -2,9 +2,9 @@ import {
   Address,
   SubscriptionCallback,
   SubscriptionHandler,
-} from '@aragon/connect-types'
-import { ErrorException } from '@aragon/connect-core'
-import { GraphQLWrapper, QueryResult } from '@aragon/connect-thegraph'
+} from '@rperez89/connect-types'
+import { ErrorException } from '@rperez89/connect-core'
+import { GraphQLWrapper, QueryResult } from '@rperez89/connect-thegraph'
 
 import * as queries from './queries'
 import Signer from '../models/Signer'

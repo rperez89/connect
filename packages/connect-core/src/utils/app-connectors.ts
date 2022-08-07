@@ -6,7 +6,7 @@ import {
   SubscriptionStart,
   isSubscriptionHandler,
   isSubscriptionStart,
-} from '@aragon/connect-types'
+} from '@rperez89/connect-types'
 import { ConnectionContext } from '../types'
 import { ErrorInvalidConnector, ErrorInvalidApp } from '../errors'
 import App from '../entities/App'

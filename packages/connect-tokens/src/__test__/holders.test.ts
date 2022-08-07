@@ -1,5 +1,5 @@
 import { connect } from '@aragon/connect'
-import { Organization } from '@aragon/connect-core'
+import { Organization } from '@rperez89/connect-core'
 import connectTokens, { Tokens, TokenHolder } from '../../src'
 
 const ORG_NAME = '0x059bcfbc477c46ab39d76c05b7b40f3a42e7de3b'

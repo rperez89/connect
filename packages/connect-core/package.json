@@ -1,6 +1,6 @@
 {
   "name": "@rperez89/connect-core",
-  "version": "0.8.0-alpha.6",
+  "version": "0.8.3",
   "license": "LGPL-3.0-or-later",
   "main": "dist/cjs/index.js",
   "module": "dist/esm/index.js",
@@ -35,7 +35,8 @@
   },
   "dependencies": {
     "ethers": "^5.0.7",
-    "radspec": "^2.0.0-rc.2"
+    "@1hive/radspec": "^2.0.0",
+    "@rperez89/connect-types": "^0.8.0-alpha.6"
   },
   "description": "Access and interact with Aragon Organizations and their apps.",
   "keywords": [

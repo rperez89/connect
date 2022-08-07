@@ -1,4 +1,4 @@
-import { Address } from '@aragon/connect-types'
+import { Address } from '@rperez89/connect-types'
 import { TokenHolderData } from '../types'
 
 export default class TokenHolder {

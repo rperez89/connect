@@ -1,6 +1,6 @@
 import { Contract, utils } from 'ethers'
-import { SubscriptionCallback, SubscriptionResult } from '@aragon/connect-types'
-import { subscription, App, ForwardingPath, arbitratorAbi } from '@aragon/connect-core'
+import { SubscriptionCallback, SubscriptionResult } from '@rperez89/connect-types'
+import { subscription, App, ForwardingPath, arbitratorAbi } from '@rperez89/connect-core'
 
 import { bn } from '../helpers'
 import Action from './Action'

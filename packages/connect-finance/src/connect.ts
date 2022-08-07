@@ -3,7 +3,7 @@ import {
   ErrorInvalidConnector,
   ErrorInvalidNetwork,
   createAppConnector,
-} from '@aragon/connect-core'
+} from '@rperez89/connect-core'
 import Finance from './models/Finance'
 import FinanceConnectorTheGraph, {
   subgraphUrlFromChainId,

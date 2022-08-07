@@ -2,8 +2,8 @@ import {
   Address,
   SubscriptionCallback,
   SubscriptionResult,
-} from '@aragon/connect-types'
-import { subscription } from '@aragon/connect-core'
+} from '@rperez89/connect-types'
+import { subscription } from '@rperez89/connect-core'
 import { ITokensConnector } from '../types'
 import Token from './Token'
 import TokenHolder from './TokenHolder'

@@ -1,11 +1,11 @@
-import { Networkish } from '@aragon/connect-types'
-import { IpfsResolver } from '@aragon/connect-core'
+import { Networkish } from '@rperez89/connect-types'
+import { IpfsResolver } from '@rperez89/connect-core'
 import {
   ConnectorJsonConfig,
   IOrganizationConnector,
-} from '@aragon/connect-core'
-import { ConnectorEthereumConfig } from '@aragon/connect-ethereum'
-import { ConnectorTheGraphConfig } from '@aragon/connect-thegraph'
+} from '@rperez89/connect-core'
+import { ConnectorEthereumConfig } from '@rperez89/connect-ethereum'
+import { ConnectorTheGraphConfig } from '@rperez89/connect-thegraph'
 
 export type IpfsResolverDeclarationObject = {
   urlTemplate?: string

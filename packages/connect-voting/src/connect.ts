@@ -3,7 +3,7 @@ import {
   ErrorInvalidConnector,
   ErrorInvalidNetwork,
   createAppConnector,
-} from '@aragon/connect-core'
+} from '@rperez89/connect-core'
 import Voting from './models/Voting'
 import VotingConnectorTheGraph, {
   subgraphUrlFromChainId,

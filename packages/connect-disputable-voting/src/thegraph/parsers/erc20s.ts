@@ -1,4 +1,4 @@
-import { QueryResult } from '@aragon/connect-thegraph'
+import { QueryResult } from '@rperez89/connect-thegraph'
 import { providers as ethersProviders } from 'ethers'
 
 import ERC20 from '../../models/ERC20'

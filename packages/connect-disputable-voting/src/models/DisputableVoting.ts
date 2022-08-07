@@ -1,6 +1,6 @@
 import { utils } from 'ethers'
-import { subscription, App, ForwardingPath } from '@aragon/connect-core'
-import { Address, SubscriptionCallback, SubscriptionResult } from '@aragon/connect-types'
+import { subscription, App, ForwardingPath } from '@rperez89/connect-core'
+import { Address, SubscriptionCallback, SubscriptionResult } from '@rperez89/connect-types'
 
 import ERC20 from './ERC20'
 import Vote from './Vote'

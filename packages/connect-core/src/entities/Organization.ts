@@ -4,7 +4,7 @@ import {
   AppFiltersParam,
   SubscriptionCallback,
   SubscriptionResult,
-} from '@aragon/connect-types'
+} from '@rperez89/connect-types'
 
 import ForwardingPathDescription, {
   decodeForwardingPath,

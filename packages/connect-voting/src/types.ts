@@ -1,7 +1,7 @@
 import {
   SubscriptionCallback,
   SubscriptionHandler,
-} from '@aragon/connect-types'
+} from '@rperez89/connect-types'
 import Vote from './models/Vote'
 import Cast from './models/Cast'
 

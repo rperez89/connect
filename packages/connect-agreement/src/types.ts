@@ -1,7 +1,7 @@
 import {
   SubscriptionCallback,
   SubscriptionHandler,
-} from '@aragon/connect-types'
+} from '@rperez89/connect-types'
 
 import Signer from './models/Signer'
 import Signature from './models/Signature'

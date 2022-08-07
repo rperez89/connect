@@ -1,16 +1,11 @@
-import * as radspec from 'radspec'
+import * as radspec from '@1hive/radspec'
 import { providers as ethersProviders } from 'ethers'
 
 import { addressesEqual } from '../address'
 import { findAppMethodFromData } from '../app'
 import { filterAndDecodeAppUpgradeIntents } from '../intent'
-import { Abi, AppMethod, StepDecoded, StepDescribed } from '../../types'
+import { AppMethod, StepDecoded, StepDescribed } from '../../types'
 import App from '../../entities/App'
-
-interface FoundMethod {
-  method?: AppMethod
-  abi?: Abi
-}
 
 /**
  * Attempt to describe intent via radspec.
@@ -18,7 +13,7 @@ interface FoundMethod {
 export async function tryEvaluatingRadspec(
   intent: StepDecoded,
   installedApps: App[],
-  provider: ethersProviders.Provider // Decorated intent with description, if one could be made
+  provider: ethersProviders.Provider  // Decorated intent with description, if one could be made
 ): Promise<StepDescribed> {
   const app = installedApps.find((app) =>
     addressesEqual(app.address, intent.to)
@@ -27,27 +22,14 @@ export async function tryEvaluatingRadspec(
   // If the intent matches an installed app, use only that app to search for a
   // method match, otherwise fallback to searching all installed apps
   const appsToSearch = app ? [app] : installedApps
-  const foundMethod = appsToSearch.reduce<FoundMethod | undefined>(
-    (found, app) => {
-      if (found) {
-        return found
-      }
+  const method = appsToSearch.reduce<AppMethod | undefined>((found, app) => {
+    if (found) {
+      return found
+    }
 
-      const method = findAppMethodFromData(app, intent.data)
-      if (method) {
-        return {
-          method,
-          // This is not very nice, but some apps don't have ABIs attached to their function
-          // declarations and so we have to fall back to using their full app ABI
-          // TODO: define a more concrete schema around the artifact.json's `function.abi`
-          abi: method.abi ? [method.abi] : app.abi,
-        }
-      }
-    },
-    undefined
-  )
-
-  const { abi, method } = foundMethod || {}
+    const method = findAppMethodFromData(app, intent.data)
+    if (method) return method
+  }, undefined)
 
   let evaluatedNotice
   if (method && method.notice) {
@@ -55,7 +37,7 @@ export async function tryEvaluatingRadspec(
       evaluatedNotice = await radspec.evaluate(
         method.notice,
         {
-          abi,
+          abi: app?.abi,
           transaction: intent,
         },
         { provider: provider }

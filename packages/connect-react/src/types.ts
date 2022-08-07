@@ -3,8 +3,8 @@ import {
   ConnectOptions,
   ConnectorDeclaration,
   Organization,
-} from '@aragon/connect'
-import { SubscriptionResult } from '@aragon/connect-types'
+} from '@rperez89/connect'
+import { SubscriptionResult } from '@rperez89/connect-types'
 
 export type ConnectProps = {
   children: ReactNode

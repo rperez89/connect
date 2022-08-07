@@ -1,7 +1,7 @@
 import {
   SubscriptionCallback,
   SubscriptionHandler,
-} from '@aragon/connect-types'
+} from '@rperez89/connect-types'
 
 import ERC20 from './models/ERC20'
 import Vote from './models/Vote'

@@ -2,8 +2,8 @@ import {
   Address,
   SubscriptionCallback,
   SubscriptionResult,
-} from '@aragon/connect-types'
-import { subscription } from '@aragon/connect-core'
+} from '@rperez89/connect-types'
+import { subscription } from '@rperez89/connect-core'
 import Transaction from './Transaction'
 import TokenBalance from './TokenBalance'
 import { IFinanceConnector } from '../types'

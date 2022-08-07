@@ -1,6 +1,6 @@
 import { providers as ethersProviders } from 'ethers'
-import { GraphQLWrapper, QueryResult } from '@aragon/connect-thegraph'
-import { SubscriptionCallback, SubscriptionHandler } from '@aragon/connect-types'
+import { GraphQLWrapper, QueryResult } from '@rperez89/connect-thegraph'
+import { SubscriptionCallback, SubscriptionHandler } from '@rperez89/connect-types'
 
 import { DisputableVotingData, IDisputableVotingConnector } from '../types'
 import Vote from '../models/Vote'

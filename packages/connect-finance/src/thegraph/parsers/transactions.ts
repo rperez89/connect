@@ -1,5 +1,5 @@
-import { ErrorUnexpectedResult } from '@aragon/connect-core'
-import { QueryResult } from '@aragon/connect-thegraph'
+import { ErrorUnexpectedResult } from '@rperez89/connect-core'
+import { QueryResult } from '@rperez89/connect-thegraph'
 import Transaction from '../../models/Transaction'
 import { TransactionData } from '../../types'
 

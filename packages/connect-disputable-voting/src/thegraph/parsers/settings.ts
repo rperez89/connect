@@ -1,4 +1,4 @@
-import { QueryResult } from '@aragon/connect-thegraph'
+import { QueryResult } from '@rperez89/connect-thegraph'
 
 import Setting from '../../models/Setting'
 import { SettingData } from '../../types'

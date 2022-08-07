@@ -1,4 +1,4 @@
-import { createAppConnector } from '@aragon/connect-core'
+import { createAppConnector } from '@rperez89/connect-core'
 import Agreement from './models/Agreement'
 import AgreementConnectorTheGraph, {
   subgraphUrlFromChainId,

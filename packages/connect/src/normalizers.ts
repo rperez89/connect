@@ -2,7 +2,7 @@ import {
   getDefaultProvider as getDefaultEthersProvider,
   providers as ethersProviders,
 } from 'ethers'
-import { Network, Networkish } from '@aragon/connect-types'
+import { Network, Networkish } from '@rperez89/connect-types'
 import {
   ConnectorJson,
   ConnectorJsonConfig,
@@ -11,13 +11,13 @@ import {
   IOrganizationConnector,
   IpfsResolver,
   ipfsResolver,
-} from '@aragon/connect-core'
+} from '@rperez89/connect-core'
 import ConnectorEthereum, {
   ConnectorEthereumConfig,
-} from '@aragon/connect-ethereum'
+} from '@rperez89/connect-ethereum'
 import ConnectorTheGraph, {
   ConnectorTheGraphConfig,
-} from '@aragon/connect-thegraph'
+} from '@rperez89/connect-thegraph'
 import {
   ConnectorDeclaration,
   ConnectOptions,

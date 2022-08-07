@@ -1,4 +1,4 @@
-import { QueryResult } from '@aragon/connect-thegraph'
+import { QueryResult } from '@rperez89/connect-thegraph'
 
 import Signer from '../../models/Signer'
 import Signature from '../../models/Signature'

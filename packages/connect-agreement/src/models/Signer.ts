@@ -1,5 +1,5 @@
-import { SubscriptionCallback, SubscriptionResult } from '@aragon/connect-types'
-import { subscription } from '@aragon/connect-core'
+import { SubscriptionCallback, SubscriptionResult } from '@rperez89/connect-types'
+import { subscription } from '@rperez89/connect-core'
 import { SignerData, IAgreementConnector } from '../types'
 import Signature from '../models/Signature'
 

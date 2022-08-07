@@ -2,7 +2,7 @@ import {
   Address,
   SubscriptionCallback,
   SubscriptionHandler,
-} from '@aragon/connect-types'
+} from '@rperez89/connect-types'
 import Token from './models/Token'
 import TokenHolder from './models/TokenHolder'
 

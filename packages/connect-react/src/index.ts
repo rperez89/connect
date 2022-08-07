@@ -1,4 +1,4 @@
-export * from '@aragon/connect'
+export * from '@rperez89/connect'
 export * from './Connect'
 export * from './create-app-hook'
 export * from './use-connect'

@@ -1,7 +1,7 @@
 import {
   SubscriptionCallback,
   SubscriptionHandler,
-} from '@aragon/connect-types'
+} from '@rperez89/connect-types'
 
 // This is used by methods allowing subscription. It allows to a create a
 // function that either subscribes directly and return a handler if a callback

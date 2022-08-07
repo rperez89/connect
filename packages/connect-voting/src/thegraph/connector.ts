@@ -1,8 +1,8 @@
 import {
   SubscriptionCallback,
   SubscriptionHandler,
-} from '@aragon/connect-types'
-import { GraphQLWrapper, QueryResult } from '@aragon/connect-thegraph'
+} from '@rperez89/connect-types'
+import { GraphQLWrapper, QueryResult } from '@rperez89/connect-thegraph'
 import { IVotingConnector } from '../types'
 import Vote from '../models/Vote'
 import Cast from '../models/Cast'

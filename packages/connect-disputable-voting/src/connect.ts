@@ -1,4 +1,4 @@
-import { createAppConnector } from '@aragon/connect-core'
+import { createAppConnector } from '@rperez89/connect-core'
 import DisputableVoting from './models/DisputableVoting'
 import DisputableVotingConnectorTheGraph, {
   subgraphUrlFromChainId,

@@ -1,4 +1,4 @@
-import { Address, Network, Networkish } from '@aragon/connect-types'
+import { Address, Network, Networkish } from '@rperez89/connect-types'
 import { ErrorInvalidNetwork } from '../errors'
 import { NETWORKS } from '../params'
 
