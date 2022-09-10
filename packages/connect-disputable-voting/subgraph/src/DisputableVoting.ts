@@ -7,7 +7,8 @@ import {
   Vote as VoteEntity,
   CastVote as CastVoteEntity,
   Voter as VoterEntity,
-  ERC20 as ERC20Entity
+  ERC20 as ERC20Entity,
+  User as UserEntity
 } from '../generated/schema'
 import {
   DisputableVoting as VotingContract,
@@ -21,6 +22,8 @@ import {
   QuietEndingExtendVote as QuietEndingExtendVoteEvent,
   ChangeRepresentative as ChangeRepresentativeEvent
 } from '../generated/templates/DisputableVoting/DisputableVoting'
+
+import{ ZERO_ADDRESS } from './helpers/index'
 
 /* eslint-disable @typescript-eslint/no-use-before-define */
 
@@ -137,8 +140,16 @@ export function handleQuietEndingExtendVote(event: QuietEndingExtendVoteEvent): 
 }
 
 export function handleChangeRepresentative(event: ChangeRepresentativeEvent): void {
+  const user = loadOrCreateUser(event.params.representative)
   const voter = loadOrCreateVoter(event.address, event.params.voter)
-  voter.representative = event.params.representative
+
+  if (event.params.representative.equals(ZERO_ADDRESS)) {
+    // Removing representative
+    voter.representative = null
+  } else {
+    voter.representative =  buildVoterId(event.address, event.params.representative)//user.id
+  }
+
   voter.save()
 }
 
@@ -181,15 +192,32 @@ function loadOrCreateCastVote(votingAddress: Address, voteId: BigInt, voterAddre
 }
 
 function loadOrCreateVoter(votingAddress: Address, voterAddress: Address): VoterEntity {
+  const user = loadOrCreateUser(voterAddress)
+
   const voterId = buildVoterId(votingAddress, voterAddress)
   let voter = VoterEntity.load(voterId)
   if (voter === null) {
     voter = new VoterEntity(voterId)
+    voter.user = user.id
     voter.voting = votingAddress.toHexString()
     voter.address = voterAddress
   }
   return voter!
 }
+
+export function loadOrCreateUser(address: Address): UserEntity {
+  const userId = address.toHexString()
+  let user = UserEntity.load(userId)
+
+  if (user === null) {
+    user = new UserEntity(userId)
+    user.address = address
+    user.save()
+  }
+
+  return user!
+}
+
 
 export function updateVoteState(votingAddress: Address, voteId: BigInt): void {
   const votingApp = VotingContract.bind(votingAddress)

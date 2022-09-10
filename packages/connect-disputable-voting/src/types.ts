@@ -82,6 +82,7 @@ export interface VoterData {
   votingId: string
   address: string
   representative: string
+  representativeFor: string
 }
 
 export interface SettingData {

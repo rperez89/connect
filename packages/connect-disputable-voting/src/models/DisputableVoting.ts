@@ -137,7 +137,7 @@ export default class DisputableVoting {
   }
 
   voterId(voterAddress: Address): string {
-    return `${this.address}-voterId-${voterAddress.toLowerCase()}`
+    return `${this.address}-voter-${voterAddress.toLowerCase()}`
   }
 
   async voter(voterAddress: Address): Promise<Voter> {

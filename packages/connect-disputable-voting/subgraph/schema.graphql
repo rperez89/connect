@@ -71,10 +71,18 @@ type CastVote @entity {
 
 type Voter @entity {
   id: ID!
+  user: User!
   voting: DisputableVoting!
   address: Bytes!
-  representative: Bytes
+  representative: Voter
   castVotes: [CastVote!] @derivedFrom(field: "voter")
+  representativeFor: [Voter!]! @derivedFrom(field: "representative")
+}
+
+type User @entity {
+  id: ID!
+  address: Bytes!
+  supports: [Voter!]! @derivedFrom(field: "user")
 }
 
 type Setting @entity {

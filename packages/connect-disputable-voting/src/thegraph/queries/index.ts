@@ -280,7 +280,12 @@ export const GET_VOTER = (type: string) => gql`
     voter(id: $voterId) {
       id
       address
-      representative
+      representative {
+        address
+      }
+      representativeFor {
+        address
+      }
       voting { 
         id
       }
